@@ -47,8 +47,3 @@ fn main() {
 */
 
 
-/* Shadowing:
-    - let by using mut we can change the variable but we can change it type
-    but through shadowing we can change its type to
-
-*/
