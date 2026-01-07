@@ -1,9 +1,10 @@
 fn main() {
     // using mut to make it mutable
     let mut age = 22;
+  
+    println!("Age : {age}");
 
     age = 23;
-    
     println!("The current age is {age}");
 }
 
