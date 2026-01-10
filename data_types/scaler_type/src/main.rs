@@ -9,7 +9,7 @@ fn main() {
     // does it mean we have to write type every time no
 
     let x = 5; // rust know this is i32
-
+    println!{"x = {x}"};
     
     // compiler cannot infer
     let guess : u32 = "42".parse().unwrap();
@@ -43,26 +43,51 @@ fn main() {
     let a: i32 = -30;
     let b: u32 = 10;
 
-    println!("signed integer :{a}/n unsigned integer{b}");
+    println!("signed integer :{a} \n unsigned integer{b}");
 
     let int_num = 10;
     let float_num = 3.16;
     let is_active = true;
-    let letter = "P";
+    let letter = 'P';
   
     println!("{int_num}, {float_num}, {is_active}, {letter}");
 
 // Integer literal like how rust read numbers
 
-let a = 1_000; // readability;
-let b = 0xfff; // hex
-let c = 0b1010; // binary
-let d = b'A'; // byete (u8)
+let a:i32 = 1_000; // readability;
+let b:i32 = 0xfff; // hex
+let c:i32 = 0b1010; // binary
+let d: u8 = b'A'; // byete (u8)
+
+
+    println!("{a}, {b}, {c}, {d}");
+
 
 // Rust doesn’t care how you write it — type matters, not format.
 
 
 /*
-
+    Integer overflow (very important)
 */
+    // IN DIBUG MODE
+
+    let x: u8 = 255;
+    // let y = x + 1; // panic
+
+    // IN RELEASE MODE
+    // 255 + 1 -> 0 // wrapping
+
+    // Rust give us explicit tools:
+
+    let checked = x.checked_add(1); // option
+    let wrapped = x.wrapping_add(1); // wraps
+    let saturated = x.saturating_add(1); // stays at max
+
+    println!("checked: {:?}", checked);
+    println!("wrapped: {}", wrapped);
+    println!("saturated: {}", saturated);
+
+    // Rust never hides dangerous behavior.
+
+    
 }
