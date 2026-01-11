@@ -89,5 +89,58 @@ let d: u8 = b'A'; // byete (u8)
 
     // Rust never hides dangerous behavior.
 
-    
+    // Floating point types
+
+    let x = 3.0;
+    let y: f32 = 5.0;
+ 
+    println!(" x is {x} \n y is {y}");
+    /* 
+        default is f64 and it follow IEEE-754
+
+        never trust float for 
+            - money
+            - exact quality
+     */
+
+    // Numeric operation 
+
+    let sum = 5 + 10;
+    let diff = 95.5 - 4.3;
+    let product = 5 * 10;
+    let quotient = 56.7 / 32.3;
+    let remainder = 43 % 5;
+
+    println!(" sum is {sum} \n diff is {diff} \n product is {product} \n quotient is {quotient} \n remainder is {remainder} \n");
+
+    /*
+        - Integer division truncates in rust
+          -5 / 3 = -1
+
+          inter division truncates means  cutting off the decimal part.
+    */
+
+    // Boolean type
+
+    let t = true;
+    let f: bool = false;
+
+    println!("t is {t} and f is {f}");
+
+    // char type
+
+    let c = 'z';
+    let emoji = '😻';
+    let d = "a"; // &str not a char
+
+    /*
+        - char = 4 bytes
+        - Unicode scaler value
+        - Not the same as string
+
+        so for char we need to use ' ' not " "
+     */
+
+    println!()
+
 }
